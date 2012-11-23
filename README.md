@@ -1,4 +1,4 @@
 Sgu
 ===
 
-The code of Sgu
+The Codes of Sgu.
