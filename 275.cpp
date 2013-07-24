@@ -43,12 +43,8 @@ void init(){
 bool check(int r){
     memset(aa,0,sizeof(aa));
 
-    //cout << "chek module" << endl;
-    rep(i,1,r){
+    rep(i,1,r)
 	rep(j,1,n+1) aa[i][j] = a[i][j];
-	//cout << aa[i][j] << " ";
-	//cout << endl;
-    }//cout << endl;
 
     int k = 1;
     rep(i,1,n){
@@ -56,10 +52,6 @@ bool check(int r){
 	if (!aa[k][i])
 	    rep(j,k+1,r) 
 		if (aa[j][i]){
-		    /*
-		    if (watch == k) watch = j;
-		    else if (watch == j) watch = k;
-		    */
 		    swapaa(k,j);
 		    break;
 		}
@@ -77,15 +69,9 @@ bool check(int r){
 void solve(){
     rep(i,1,row){
 	a[i][n+1] = 1;
-	//watch = i;
+
 	if (!check(i)) a[i][n+1] = 0;
 	ans[i] = a[i][n+1];
-	/*	
-	rep(pos,1,i){
-	    rep(j,1,n+1) cout << a[pos][j] << " ";
-	    cout << endl;
-	}cout << endl;
-	*/
     }
 }
 

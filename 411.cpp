@@ -24,22 +24,19 @@ int match(int a,int b,int c)
 }
 int main()
 {
-    #ifndef ONLINE_JUDGE
-    freopen("test.in","r",stdin);
-    #endif
     ios::sync_with_stdio(false);
     rep(i,0,1) 
 	{
 	    cin >> str[i];
 	    rep(j,1,2*str[i].size()+1) st[i] = st[i]+"#";
 	    rep(j,0,str[i].size()-1) st[i][j*2+1] = str[i][j];
-	    //z數組表示以j爲中間位置，向右側能夠擴展的最長迴文距離是多少
+	    
 	    z[i][0] = 1;len = st[i].size();
 	    int L = 0,R = 0;
 	    rep(j,1,len-1)
 		{
-		    int ii = 2*L-j;//L-(i-L) j關於L對稱的位置
-		    int n = R-j+1;//j到j的右側能夠被覆蓋住的區域範圍
+		    int ii = 2*L-j;
+		    int n = R-j+1;
 		    if (R<j)
 			{
 			    z[i][j] = match(j,j,i);
